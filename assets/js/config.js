@@ -20,5 +20,6 @@ var pool = [
 	'Abathur',
 	'Alarak',
 	'Nova',
-	'Stukov'
+	'Stukov',
+	'Fenix'
 ];
