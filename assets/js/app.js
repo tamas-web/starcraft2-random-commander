@@ -15,15 +15,11 @@ function Commanders( view, selector, list, pool ){
 	this.pool = [];
 	this.used = [];
 
-	var _hasStorageSupport = ( 'undefined' !== typeof( Storage ) );
-	if( _hasStorageSupport ){
-		try{
-			localStorage.setItem( 'test', 1 );
-			localStorage.removeItem( 'test' );
-		} catch ( e ){
-			_hasStorageSupport = false;
-		}
-	}
+	var _hasStorageSupport = false;
+	try{
+	    _hasStorageSupport = 'undefined' !== typeof( localStorage );
+	} catch(e){}
+	
 	this.hasStorageSupport = function(){
 		return _hasStorageSupport;
 	};
