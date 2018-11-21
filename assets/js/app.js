@@ -17,6 +17,14 @@ function Commanders( view, selector, list, pool ){
 
 	var _hasStorageSupport = ( 'undefined' !== typeof( Storage ) );
 	this.hasStorageSupport = function(){
+		if( _hasStorageSupport ){
+			try{
+				localStorage.setItem( 'test', 1 );
+				localStorage.removeItem( 'test' );
+			} catch ( e ){
+				_hasStorageSupport = false;
+			}
+		}
 		return _hasStorageSupport;
 	};
 
